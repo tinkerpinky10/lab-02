@@ -28,20 +28,20 @@ Question 3: How did the speed of the TCP response change? Why might this happen?
   loss was added, the server had to detect lost packets and transmit them.
   
 ## TCP_server.c Questions:
-1. What is argc and *argv[]?
+*1. What is argc and *argv[]?*
   argc is the number of arguments given in the command line - the first argument will
   always be the code name.
 
   *argv[] is an array that holds all of the commands (in strings) so you can access any
   given input i by argv[i].
 
-2. What is a UNIX file descriptor and file descriptor table?
+*2. What is a UNIX file descriptor and file descriptor table?*
 
   A file descriptor is usually an integer value given to a file or any other type of I/O source;
   they are used to identify an open file. File descriptors are an index into a file-descriptor
   table - the table is a collection of integer array indices that are file descriptors.
   
-3. What is a struct? What's the structure of sockaddr_in?
+*3. What is a struct? What's the structure of sockaddr_in?*
   
   A struct is a way to group related variables and methods together in one place. The
   sockaddr_in structure has 4 variables: short sin_family, unsigned short sin_port, struct
@@ -49,7 +49,7 @@ Question 3: How did the speed of the TCP response change? Why might this happen?
   These types of structs are usually used when you want to store the address of the
   server.
   
-4. What are the input parameters and return value of socket()?
+*4. What are the input parameters and return value of socket()?*
 
   The parameters are AF_INET which is the address domain of the socket,
   SOCK_STREAM is the type of socket - in this case it reads characters in a continuous
@@ -57,22 +57,22 @@ Question 3: How did the speed of the TCP response change? Why might this happen?
   operating system will choose the most appropriate protocol. The return value is an entry
   into the file descriptor table.
   
-5. What are the input parameters of bind() and listen()?
+*5. What are the input parameters of bind() and listen()?*
 
   For bind() the parameters are a socket file descriptor(sockfd), the address to which is
   bound(*serv_addr) and the size of the address. For listen() the parameters are a socket
   file descriptor (sockfd) and the number of connections that can be waiting (in this case
   5).
   
-6. Why use while(1)? Based on the code below, what problems might occur if there
-are multiple simultaneous connections to handle?
+*6. Why use while(1)? Based on the code below, what problems might occur if there
+are multiple simultaneous connections to handle?*
 
   The while loop makes sure that the server will handle one connection at a time in the
   order that the simultaneous connections come through. The loop allows the server to
   continuously run.
   
-7. Research how the command fork() works. How can it be applied here to better
-handle multiple connections?
+*7. Research how the command fork() works. How can it be applied here to better
+handle multiple connections?*
 
   The fork() system call creates a new process that runs alone with the process that made
   the fork() called. It can be used here by creating a new process for each connection so
