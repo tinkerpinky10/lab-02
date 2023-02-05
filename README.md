@@ -8,19 +8,19 @@
 ## Lab Question Answers
 
 *Question 1: How did the reliability of UDP change when you added 50% loss to your local
-environment? Why did this occur?
+environment? Why did this occur?*
 
   The reliability of the UDP decreased when the loss was added - everything really
   slowed down and not all messages were received.
   This probably happened because when the loss was added, the chances of every
   packet getting sent and received lessened.
 
-*Question 2: How did the reliability of TCP change? Why did this occur?
+*Question 2: How did the reliability of TCP change? Why did this occur?*
   
   The reliability of TCP did not change so much since all everything sent was received on
   both sides - unlike UDP. This occurred since TCP has reliable and in-order delivery.
   
-*Question 3: How did the speed of the TCP response change? Why might this happen?
+*Question 3: How did the speed of the TCP response change? Why might this happen?*
   
   The speed of the TCP slowed down a lot when the loss was added - I realized I needed
   to wait a bit before seeing the messages I sent from the server to the client. This
